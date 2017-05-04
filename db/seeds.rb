@@ -7,5 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+# product = Product.new(name: "", price: "",image: "", description: "")
+# product.save
 
+# product = Product.new(name: "", price: "",image: "", description: "")
+# product.save
+
+# product = Product.new(name: "", price: "",image: "", description: "")
+# product.save
+
+# product = Product.new(name: "", price: "",image: "", description: "")
 #Dare Breaktime, Chips Ahoy, Famous Amos, Keebler Chips Deluxe, Key Food, Pepperidge Farm Nantucket, Trader Joe’s,  Tate’s, Voortman, and Whole Foods 365
