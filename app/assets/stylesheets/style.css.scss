@@ -12,11 +12,14 @@ h1 {
   color: green;
 }
 
-.items {
+.cookie {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   border: 5px solid black;
   margin-bottom: 10px;
 }
-.item-inner {
+.cookie-inner {
   height: 200px;
 }
 
@@ -25,4 +28,6 @@ img {
   border-right: 5px solid black;
 }
 
-
+button {
+  align-self: center;
+}

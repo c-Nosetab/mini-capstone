@@ -1,0 +1,17 @@
+<h1>Update item:</h1>
+
+<%= form_tag "/cookies/#{@cookie.id}", method: :patch do %>
+  <div>
+    <h2>Product Name: <input type="name" name="name" value="<%= @cookie.name %>"> </h2>
+  </div>
+  <div>
+    <h2>Price: <input type="text" name="price" value="<%= @cookie.price %>"> </h2>
+  </div>
+  <div>
+    <h2>Image URL: <input type="text" name="image" value="<%= @cookie.image %>"> </h2>
+  </div>
+  <div>
+    <h2>Description: <input type="text" name="description" value="<%= @cookie.description %>"> </h2>
+  </div>
+  <input type="submit" value="Update Item">
+<% end %>

@@ -1,0 +1,17 @@
+
+  <div class="row cookie">
+    <div class="col-xs-4 image-area">
+      <img class="img-responsive" src="<%= @cookie.image %>" title="<%= @cookie.description %>">
+    </div>
+    <div class="col-xs-8 cookie-inner">
+      <h2><%= @cookie.name %>: $<%= @cookie.price %></h2>
+      <p><%= @cookie.description %></p>
+      <div class="d-flex justify-content-center">
+          <button type="button" class="btn btn-primary">Add to Cart</button>
+      </div>
+    </div>
+    <hr>
+    <h4><a href="/cookies/<%= @cookie.id %>/edit">Edit Product</a></h4>
+  </div>
+
+  <%= link_to "Delete", "/cookies/#{@cookie.id}", method: :delete %>
