@@ -1,11 +1,12 @@
-
-  <div class="row cookie">
+<%=  %>
+  <div class="row cookie thumbnail">
     <div class="col-xs-4 image-area">
       <img class="img-responsive" src="<%= @cookie.image %>" title="<%= @cookie.description %>">
     </div>
     <div class="col-xs-8 cookie-inner">
-      <h2><%= @cookie.name %>: $<%= @cookie.price %></h2>
+      <h2><%= @cookie.name %>: $<%= @cookie.discount_item %> </h2>
       <p><%= @cookie.description %></p>
+      <p>Total: <%= @cookie.total_price %></p>
       <div class="d-flex justify-content-center">
           <button type="button" class="btn btn-primary">Add to Cart</button>
       </div>

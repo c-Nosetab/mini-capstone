@@ -1,17 +1,18 @@
-<h1>Hello World</h1>
-
-<% @cookies.each do |cookie| %>
-  <div class="row cookie">
-    <div class="col-xs-4 image-area">
-      <img class="img-responsive" src="<%= cookie.image %>" title="<%= cookie.description %>">
-    </div>
-    <div class="col-xs-8 cookie-inner">
-      <h2><a href="/cookies/<%= cookie.id %>"><%= cookie.name %></a>: $<%= cookie.price %></h2>
-      <p><%= cookie.description %></p>
-      <div class="d-flex justify-content-center">
-          <button type="button" class="btn btn-primary">Add to Cart</button>
+<div class="content row">
+  <h1>COOKIES!!!!!</h1>
+  <% @cookies.each do |cookie| %>
+    <div class="cookie thumbnail">
+      <div class="col-xs-4 image-area">
+        <img class="img-responsive" src="<%= cookie.image %>" title="<%= cookie.description %>">
       </div>
+      <div class="col-xs-8 cookie-inner">
+        <h2><a href="/cookies/<%= cookie.id %>"><%= cookie.name %></a>: $<%= cookie.discount_item %></h2>
+        <p><%= cookie.description %></p>
+        <div class="d-flex justify-content-center">
+            <button type="button" class="btn btn-primary">Add to Cart</button>
+        </div>
+      </div>
+      <hr>
     </div>
-    <hr>
-  </div>
-<% end %>
+  <% end %>
+</div>
