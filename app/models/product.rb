@@ -9,12 +9,15 @@ class Product < ApplicationRecord
   end
 
   def discount_item
-    if price < 2
-      message = "#{price}.99 - Discount Item!"
+    if discounted?
+      "#{price}.00 - Discount Item!"
     else
-      message = "#{price}.99 - Everyday Value!"
+      "#{price}.00 - Everyday Value!"
     end
-    message
+  end
+
+  def discounted?
+    price < 4
   end
 
   def total_price

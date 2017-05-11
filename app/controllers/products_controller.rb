@@ -35,7 +35,8 @@ class ProductsController < ApplicationController
                                 name: params[:name],
                                 price: params[:price],
                                 image: params[:image],
-                                description: params[:description]
+                                description: params[:description],
+                                stock: params[:stock]
                                 )
     cookie.save
 
