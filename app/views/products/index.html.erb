@@ -6,7 +6,7 @@
         <img class="img-responsive" src="<%= cookie.image %>" title="<%= cookie.description %>">
       </div>
       <div class="col-xs-8 cookie-inner">
-        <h2><a href="/cookies/<%= cookie.id %>"><%= cookie.name %></a>: $<%= cookie.discount_item %></h2>
+        <h2><a href="/cookies/<%= cookie.id %>"><%= cookie.name %></a>: <%= number_to_currency(cookie.discount_item) %></h2>
         <p><%= cookie.description %></p>
         <div class="d-flex justify-content-center">
             <button type="button" class="btn btn-primary">Add to Cart</button>

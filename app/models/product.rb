@@ -1,7 +1,8 @@
 class Product < ApplicationRecord
+  belongs_to :supplier
 
   def friendly_info
-    "#{name}: $#{price}.00"
+    "#{name}: $#{price}"
   end
 
   def friendly_time
@@ -10,9 +11,9 @@ class Product < ApplicationRecord
 
   def discount_item
     if discounted?
-      "#{price}.00 - Discount Item!"
+      "#{price} - Discount Item!"
     else
-      "#{price}.00 - Everyday Value!"
+      "#{price} - Everyday Value!"
     end
   end
 

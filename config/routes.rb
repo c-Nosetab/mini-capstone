@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   delete '/cookies/:id' => 'products#destroy'
 
 
+  get '/random' => 'products#random'
+
+
 
 
 end

@@ -2,6 +2,30 @@ class ProductsController < ApplicationController
 
   def index
     @cookies = Product.all
+
+    sort_attribute = params[:sort]
+    sort_order = params[:sort_order]
+    discount = params[:discount]
+    random = params[:random]
+    search = params[:search]
+
+    if search
+      @cookies = @cookies.where("name iLIKE ? OR description iLIKE ?", "%#{search}%", "%#{search}%")
+    end
+
+    if discount
+      @cookies = @cookies.where("price < ?", discount)
+    end
+    if random
+      @cookies = @cookies.order("RANDOM()").limit(random)
+    end
+
+    if sort_attribute && sort_order
+      @cookies = @cookies.order(sort_attribute => sort_order)
+    elsif sort_attribute
+      @cookies = @cookies.order(sort_attribute)
+    end
+
   end
 
   def show
@@ -17,7 +41,8 @@ class ProductsController < ApplicationController
                         name: params[:name],
                         price: params[:price],
                         image: params[:image],
-                        description: params[:description]
+                        description: params[:description],
+                        supplier_id: params[:supplier_id]
                         )
     cookie.save
 
@@ -36,7 +61,8 @@ class ProductsController < ApplicationController
                                 price: params[:price],
                                 image: params[:image],
                                 description: params[:description],
-                                stock: params[:stock]
+                                stock: params[:stock],
+                                supplier_id: params[:supplier_id]
                                 )
     cookie.save
 
@@ -49,6 +75,13 @@ class ProductsController < ApplicationController
     product.destroy
     flash[:warning] = "Successfully Deleted"
     redirect_to '/'
+  end
+
+
+  def random
+    product = Product.all.sample
+
+    redirect_to "/cookies/#{product.id}"
   end
 
 end
