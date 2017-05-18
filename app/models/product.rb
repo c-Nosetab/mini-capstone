@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
   belongs_to :supplier
+  has_many :images
 
   def friendly_info
     "#{name}: $#{price}"
@@ -24,6 +25,15 @@ class Product < ApplicationRecord
   def total_price
     total = price + (price* 0.09)
 
+  end
+
+  def first_image_url
+    image_collection = images
+    if image_collection.length == 0
+      "https://i.ytimg.com/vi/NDJBQ0k9TzQ/maxresdefault.jpg"
+    else
+      image_collection.first.url
+    end
   end
 
 end

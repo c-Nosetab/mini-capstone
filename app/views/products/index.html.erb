@@ -3,7 +3,7 @@
   <% @cookies.each do |cookie| %>
     <div class="cookie thumbnail">
       <div class="col-xs-4 image-area">
-        <img class="img-responsive" src="<%= cookie.image %>" title="<%= cookie.description %>">
+        <img class="img-responsive" src="<%= cookie.first_image_url %>" title="<%= cookie.description %>">
       </div>
       <div class="col-xs-8 cookie-inner">
         <h2><a href="/cookies/<%= cookie.id %>"><%= cookie.name %></a>: <%= number_to_currency(cookie.discount_item) %></h2>

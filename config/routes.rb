@@ -8,6 +8,12 @@ Rails.application.routes.draw do
   patch '/cookies/:id' => 'products#update'
   delete '/cookies/:id' => 'products#destroy'
 
+  get '/signup' => 'users#new'
+  post '/users' => 'users#create'
+
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
 
   get '/random' => 'products#random'
 

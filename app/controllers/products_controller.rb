@@ -40,9 +40,8 @@ class ProductsController < ApplicationController
     cookie = Product.new(
                         name: params[:name],
                         price: params[:price],
-                        image: params[:image],
                         description: params[:description],
-                        supplier_id: params[:supplier_id]
+                        supplier_id: params[:supplier][:supplier_id]
                         )
     cookie.save
 
@@ -59,7 +58,6 @@ class ProductsController < ApplicationController
     cookie.assign_attributes(
                                 name: params[:name],
                                 price: params[:price],
-                                image: params[:image],
                                 description: params[:description],
                                 stock: params[:stock],
                                 supplier_id: params[:supplier_id]
