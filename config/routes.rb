@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/cookies/new' => 'products#new'
   post '/cookies' => 'products#create'
   get '/cookies/:id' => 'products#show'
+
   get '/cookies/:id/edit' => 'products#edit'
   patch '/cookies/:id' => 'products#update'
   delete '/cookies/:id' => 'products#destroy'
@@ -17,7 +18,8 @@ Rails.application.routes.draw do
 
   get '/random' => 'products#random'
 
-
+  post '/orders' => 'orders#create'
+  get '/orders/:id' => 'orders#show'
 
 
 end

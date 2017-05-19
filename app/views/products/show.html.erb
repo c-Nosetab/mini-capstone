@@ -8,9 +8,14 @@
     <p><%= @cookie.description %></p>
     <p class="<%= "red-price" if @cookie.discounted? %>">Total: <%= number_to_currency(@cookie.total_price) %></p>
     <h5> <%= @cookie.supplier.name %></h5>
-    <div class="d-flex justify-content-center">
-        <button type="button" class="btn btn-primary">Add to Cart</button>
-    </div>
+
+      <%= form_tag '/orders', method: :post do %>
+        <h3>Product ID: <input type="text" name="product_id" value="<%= @cookie.id %>">
+        Quantity: <input type="text" name="quantity" value="1"></h3>
+        <div class="d-flex justify-content-center">
+            <%= submit_tag "Buy Now!" %>
+        </div>
+      <% end %>
   </div>
   <hr>
   <div>

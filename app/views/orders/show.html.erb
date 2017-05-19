@@ -1,0 +1,26 @@
+<h1>Order Summary:</h1>
+
+<h2>
+<div>
+  Product ID: <%= @order.product_id %>
+</div>
+<div>
+  Quantity: <%= @order.quantity %>
+</div>
+
+<div>
+  Item id: <%= @order.id %>
+</div>
+
+<div>
+  Subtotal: <%= number_to_currency(@order.subtotal) %>
+</div>
+
+<div>
+  Tax: <%= number_to_currency(@order.tax) %>
+</div>
+
+<div style="color: green">
+  Total: <%= number_to_currency(@order.total) %>
+</div>
+</h2>

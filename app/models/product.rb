@@ -1,6 +1,8 @@
 class Product < ApplicationRecord
   belongs_to :supplier
   has_many :images
+  has_many :order
+
 
   def friendly_info
     "#{name}: $#{price}"
@@ -34,6 +36,18 @@ class Product < ApplicationRecord
     else
       image_collection.first.url
     end
+  end
+
+  def find_subtotal(price, quantity)
+    @total_price = price.to_i * quantity.to_i
+  end
+
+  def find_tax
+    @tax = @total_price * 0.1
+  end
+
+  def find_total
+    @total_price + @tax
   end
 
 end
