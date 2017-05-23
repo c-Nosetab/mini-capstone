@@ -35,6 +35,10 @@
                 <li role="separator" class="divider"></li>
                 <li><a href="#">Separated link</a></li>
                 <li role="separator" class="divider"></li>
+
+                <% Category.all.each do |category| %>
+                  <li><a href="/cookies?category=<%= category.name %>">Find <%= category.name.titleize %></a></li>
+                <% end %>
                 <li><a href="/random">Random</a></li>
               </ul>
             </li>

@@ -6,6 +6,10 @@ body {
   background-image: url('geometry.png');
 }
 
+.show-content {
+  height: 500px;
+}
+
 .content {
   width: 80%;
   margin: 20px auto;
@@ -25,6 +29,7 @@ h1 {
   align-items: center;
   border: 5px solid black;
   margin-bottom: 10px;
+  height: 450px;
 }
 .cookie-inner {
   height: 200px;

@@ -8,9 +8,14 @@ class ProductsController < ApplicationController
     discount = params[:discount]
     random = params[:random]
     search = params[:search]
+    category = params[:category]
 
     if search
       @cookies = @cookies.where("name iLIKE ? OR description iLIKE ?", "%#{search}%", "%#{search}%")
+    end
+
+    if category
+      @cookies = Category.find_by(name: category).products
     end
 
     if discount

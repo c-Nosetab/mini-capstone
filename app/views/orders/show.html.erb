@@ -1,26 +1,31 @@
 <h1>Order Summary:</h1>
 
-<h2>
-<div>
-  Product ID: <%= @order.product_id %>
-</div>
-<div>
-  Quantity: <%= @order.quantity %>
-</div>
+<div class="thumbnail content">
+  <h2>
+    <div>
+      Order Number: <%= @order.id + 52300 %>
+    </div>
+    <br>
+    <div>
+      Product: <%= @product.name %>
+    </div>
+    <div>
+      Quantity: <%= @order.quantity %>
+    </div>
+  </h2>
+  <h4>
+    <div>
+      Subtotal: <%= number_to_currency(@order.subtotal) %>
+    </div>
 
-<div>
-  Item id: <%= @order.id %>
-</div>
+    <div>
+      Tax: <%= number_to_currency(@order.tax) %>
+    </div>
+  </h4>
 
-<div>
-  Subtotal: <%= number_to_currency(@order.subtotal) %>
+  <h3>
+    <div style="color: green">
+      Total: <%= number_to_currency(@order.total) %>
+    </div>
+  </h3>
 </div>
-
-<div>
-  Tax: <%= number_to_currency(@order.tax) %>
-</div>
-
-<div style="color: green">
-  Total: <%= number_to_currency(@order.total) %>
-</div>
-</h2>
