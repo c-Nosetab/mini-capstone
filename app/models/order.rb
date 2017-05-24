@@ -1,13 +1,24 @@
 class Order < ApplicationRecord
   belongs_to :product, optional: true
   belongs_to :user
+  has_many :carted_products
+  has_many :users, through: :carted_products
+  has_many :products, through: :carted_products
 
   def price
     @item = Product.find(product_id).price
   end
 
-  def calculate_subtotal
+  def calculate_subtotal(cart)
+    subtotal = 0
+
+    cart.each do |item|
+      subtotal = item.product.price * item.quantity
+    end
+
+
     self.subtotal = product.price * quantity
+
 
   end
 

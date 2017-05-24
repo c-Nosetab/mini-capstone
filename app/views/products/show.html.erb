@@ -10,13 +10,13 @@
       <p class="<%= "red-price" if @cookie.discounted? %>">Total: <%= number_to_currency(@cookie.total_price) %></p>
       <h5> <%= @cookie.supplier.name %></h5>
 
-        <%= form_tag '/orders', method: :post do %>
+        <%= form_tag '/checkout', method: :post do %>
           <h3><input type="hidden" name="product_id" value="<%= @cookie.id %>">
 
 
           Quantity: <input type="text" name="quantity" placeholder="Quantity">
 
-              <%= submit_tag "Buy Now!", class: "btn btn-primary" %></h3>
+              <%= submit_tag "Add to Cart!", class: "btn btn-primary" %></h3>
         <% end %>
     </div>
     <hr>

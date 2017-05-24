@@ -1,0 +1,14 @@
+<h1>Carted Products: </h1>
+<ol>
+<div class="content">
+  <% @cart.each do |item| %>
+    <h3 class="thumbnail"><li><%= item.product.name %> = <%= number_to_currency(item.product.price) %> x <%= item.quantity %> = subtotal </li></h3>
+
+  <% end %>
+  </ol>
+  <div class="content">
+    <%= form_tag "/orders", method: :post do %>
+      <%= submit_tag "Buy Now!", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

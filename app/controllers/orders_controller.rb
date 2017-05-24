@@ -1,11 +1,11 @@
 class OrdersController < ApplicationController
 
   def create
+    items = CartedProduct.where(status: "carted")
 
     order = Order.new(
-                      user_id: current_user.id,
-                      quantity: params[:quantity],
-                      product_id: params[:product_id],
+                      user_id: current_user.id
+                      subtotal: items.calculate_subtotal
                       )
 
     order.calculate_subtotal
