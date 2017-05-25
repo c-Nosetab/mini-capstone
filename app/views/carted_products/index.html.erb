@@ -1,8 +1,19 @@
 <h1>Carted Products: </h1>
 <ol>
-<div class="content">
+<div class="content well">
   <% @cart.each do |item| %>
-    <h3 class="thumbnail"><li><%= item.product.name %> = <%= number_to_currency(item.product.price) %> x <%= item.quantity %> = subtotal </li></h3>
+
+<!--   <!%= form_tag do%>
+    <input type="text" name="quantity" value="<!%= item.quantity %>">
+  <!% end %> -->
+
+    <h3><li><%= item.product.name %> = <%= number_to_currency(item.product.price) %> x <%= item.quantity %> = <strong><%= number_to_currency(item.product.price * item.quantity) %> </strong>-
+
+
+    <%= link_to  "Remove Item", "/carted_products/#{item.id}", method: :delete, class: "btn btn-danger" %>
+      </li>
+    </h3>
+
 
   <% end %>
   </ol>

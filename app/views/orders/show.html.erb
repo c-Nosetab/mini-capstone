@@ -1,18 +1,13 @@
 <h1>Order Summary:</h1>
 
-<div class="thumbnail content">
-  <h2>
-    <div>
-      Order Number: <%= @order.id + 52300 %>
-    </div>
-    <br>
-    <div>
-      Product: <%= @product.name %>
-    </div>
-    <div>
-      Quantity: <%= @order.quantity %>
-    </div>
-  </h2>
+<% @items.each do |item| %>
+
+  <div class="thumbnail content">
+    <h3><%= item.quantity %> x <%= item.product.name %> </h3>
+  </div>
+
+<% end %>
+<div class="content">
   <h4>
     <div>
       Subtotal: <%= number_to_currency(@order.subtotal) %>
