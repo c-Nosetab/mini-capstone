@@ -20,10 +20,12 @@
         <% end %>
     </div>
     <hr>
-    <div>
-      <h4><a href="/cookies/<%= @cookie.id %>/edit">Edit Product</a></h4>
-      <h4><%= link_to "Delete", "/cookies/#{@cookie.id}", method: :delete %></h4>
-    </div>
+    <% if admin_signed_in? %>
+      <div>
+        <h4><a href="/cookies/<%= @cookie.id %>/edit">Edit Product</a></h4>
+        <h4><%= link_to "Delete", "/cookies/#{@cookie.id}", method: :delete %></h4>
+      </div>
+    <% end %>
   </div>
 </div>
 

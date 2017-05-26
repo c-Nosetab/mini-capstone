@@ -1,4 +1,5 @@
 class CartedProductsController < ApplicationController
+  before_action :authenticate_user!
 
   def index
 
@@ -19,6 +20,8 @@ class CartedProductsController < ApplicationController
       redirect_to '/'
     end
   end
+
+
 
 
   def create

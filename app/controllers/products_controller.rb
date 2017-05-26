@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_admin!, except: [:index, :show, :random]
 
   def index
     @cookies = Product.all
@@ -39,41 +40,53 @@ class ProductsController < ApplicationController
   end
 
   def new
+    @cookie = Product.new
   end
 
   def create
-    cookie = Product.new(
+
+    @cookie = Product.new(
                         name: params[:name],
                         price: params[:price],
                         description: params[:description],
                         supplier_id: params[:supplier][:supplier_id]
                         )
-    cookie.save
-
-    flash[:success] = "Product Added"
-    redirect_to "/cookies/#{cookie.id}"
+    if @cookie.save
+      flash[:success] = "Product Added"
+      redirect_to "/cookies/#{@cookie.id}"
+    else
+      render 'new.html.erb'
+    end
   end
 
   def edit
+
     @cookie = Product.find(params[:id])
+
+
+
   end
 
   def update
-    cookie = Product.find(params[:id])
-    cookie.assign_attributes(
+
+    @cookie = Product.find(params[:id])
+    @cookie.assign_attributes(
                                 name: params[:name],
                                 price: params[:price],
                                 description: params[:description],
                                 stock: params[:stock],
                                 supplier_id: params[:supplier_id]
                                 )
-    cookie.save
-
-    flash[:success] = "Item updated"
-    redirect_to "/cookies/#{cookie.id}"
+    if @cookie.save
+      flash[:success] = "Item updated"
+      redirect_to "/cookies/#{@cookie.id}"
+    else
+      render 'edit.html.erb'
+    end
   end
 
   def destroy
+
     product = Product.find(params[:id])
     product.destroy
     flash[:warning] = "Successfully Deleted"

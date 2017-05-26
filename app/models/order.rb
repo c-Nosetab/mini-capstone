@@ -17,17 +17,17 @@ class Order < ApplicationRecord
   #   # end
 
 
-  #   self.subtotal = 4.00
+  def calculate_totals
+    subtotal_sum = 0
 
+    carted_products.each do |item|
+      subtotal_sum += item.subtotal_thing
+    end
 
-  # end
-
-  def calculate_tax
+    self.subtotal = subtotal_sum
     self.tax = subtotal * 0.09
-  end
-
-  def calculate_total
     self.total = subtotal + tax
+    save
   end
 
 end
