@@ -1,5 +1,5 @@
 class Image < ApplicationRecord
   belongs_to :product
 
-  validates :images, presence: true
+  validates :url, presence: true
 end
