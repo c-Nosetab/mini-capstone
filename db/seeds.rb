@@ -1,19 +1,19 @@
-Supplier.create!([
-  {name: "Nabisco", email: "time@nabisco.com", phone: "555-345-6789"},
-  {name: "Pepperidge Farm", email: "george@pepfarms.com", phone: "678-222-5555"},
-  {name: "General Cookies", email: "whatthecookies@gmail.com", phone: "555-123-9876"}
-])
+# Supplier.create!([
+#   {name: "Nabisco", email: "time@nabisco.com", phone: "555-345-6789"},
+#   {name: "Pepperidge Farm", email: "george@pepfarms.com", phone: "678-222-5555"},
+#   {name: "General Cookies", email: "whatthecookies@gmail.com", phone: "555-123-9876"}
+# ])
 
 
 
-Product.create!([
-  {name: "Nabisco Chips Ahoy! Chewy Chocolate Chip Cookies", price: "4.0", description: "Crammed with real chocolate chips. Resealable package. Made in Mexico.", stock: true, supplier_id: 1},
-  {name: "Famous Amos Bite Size Cookies, Chocolate Chip & Pecans", price: "1.0", description: "I \"d-double\" dare you to eat just one! Semi-sweet chocolate chips. Since 1894. It takes heart to make a great cookie.", stock: true, supplier_id: 3},
-  {name: "Keebler Fudge Stripes Original Cookies", price: "3.0", description: "We don't fudge on our fudge. When fudge is rich and creamy and made with only 100% real cocoa, no matter where it goes, it's wonderfully delicious. So that's exactly what we Elves use. Then we add a little of our magic to bake up oh-so-many delightful and different kinds of fudge cookies. We love our fudge. Oh, how it can please.", stock: true, supplier_id: 3},
-  {name: "Nantucket Pepperidge Farm Chunk Cookies", price: "3.0", description: "Baked with ingredients to satisfy the most decadent cookie cravings.", stock: true, supplier_id: 2},
-  {name: "Oreo Original Chocolate Chip Cookies", price: "4.0", description: "Milk's favorite cookie. Sealed; slit appears when opened.", stock: true, supplier_id: 3},
-  {name: "Nabisco Chips Ahoy! Chocolate Chip Cookies", price: "4.0", description: "This is a thing", stock: true, supplier_id: 1}
-])
+# Product.create!([
+#   {name: "Nabisco Chips Ahoy! Chewy Chocolate Chip Cookies", price: "4.0", description: "Crammed with real chocolate chips. Resealable package. Made in Mexico.", stock: true, supplier_id: 1},
+#   {name: "Famous Amos Bite Size Cookies, Chocolate Chip & Pecans", price: "1.0", description: "I \"d-double\" dare you to eat just one! Semi-sweet chocolate chips. Since 1894. It takes heart to make a great cookie.", stock: true, supplier_id: 3},
+#   {name: "Keebler Fudge Stripes Original Cookies", price: "3.0", description: "We don't fudge on our fudge. When fudge is rich and creamy and made with only 100% real cocoa, no matter where it goes, it's wonderfully delicious. So that's exactly what we Elves use. Then we add a little of our magic to bake up oh-so-many delightful and different kinds of fudge cookies. We love our fudge. Oh, how it can please.", stock: true, supplier_id: 3},
+#   {name: "Nantucket Pepperidge Farm Chunk Cookies", price: "3.0", description: "Baked with ingredients to satisfy the most decadent cookie cravings.", stock: true, supplier_id: 2},
+#   {name: "Oreo Original Chocolate Chip Cookies", price: "4.0", description: "Milk's favorite cookie. Sealed; slit appears when opened.", stock: true, supplier_id: 3},
+#   {name: "Nabisco Chips Ahoy! Chocolate Chip Cookies", price: "4.0", description: "This is a thing", stock: true, supplier_id: 1}
+# ])
 
 
 Image.create!([
@@ -29,22 +29,22 @@ Image.create!([
   {url: "http://del.h-cdn.co/assets/15/23/1600x800/landscape-1433469460-oreo-plate.jpg", product_id: 5}
 ])
 
-Category.create!([
-  {name: "Expensive"},
-  {name: "Chocolate Chip"},
-  {name: "Yummy"}
-])
+# Category.create!([
+#   {name: "Expensive"},
+#   {name: "Chocolate Chip"},
+#   {name: "Yummy"}
+# ])
 
 
-CategoryProduct.create!([
-  {category_id: 2, product_id: 1},
-  {category_id: 1, product_id: 3},
-  {category_id: 3, product_id: 1},
-  {category_id: 3, product_id: 4},
-  {category_id: 2, product_id: 2},
-  {category_id: 3, product_id: 5},
-  {category_id: 3, product_id: 6},
-  {category_id: 3, product_id: 3},
-  {category_id: 1, product_id: 5},
-  {category_id: 1, product_id: 2}
-])
+# CategoryProduct.create!([
+#   {category_id: 2, product_id: 1},
+#   {category_id: 1, product_id: 3},
+#   {category_id: 3, product_id: 1},
+#   {category_id: 3, product_id: 4},
+#   {category_id: 2, product_id: 2},
+#   {category_id: 3, product_id: 5},
+#   {category_id: 3, product_id: 6},
+#   {category_id: 3, product_id: 3},
+#   {category_id: 1, product_id: 5},
+#   {category_id: 1, product_id: 2}
+# ])
