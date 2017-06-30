@@ -1,3 +1,11 @@
+Supplier.create!([
+  {name: "Nabisco", email: "time@nabisco.com", phone: "555-345-6789"},
+  {name: "Pepperidge Farm", email: "george@pepfarms.com", phone: "678-222-5555"},
+  {name: "General Cookies", email: "whatthecookies@gmail.com", phone: "555-123-9876"}
+])
+
+
+
 Product.create!([
   {name: "Nabisco Chips Ahoy! Chewy Chocolate Chip Cookies", price: "4.0", description: "Crammed with real chocolate chips. Resealable package. Made in Mexico.", stock: true, supplier_id: 1},
   {name: "Famous Amos Bite Size Cookies, Chocolate Chip & Pecans", price: "1.0", description: "I \"d-double\" dare you to eat just one! Semi-sweet chocolate chips. Since 1894. It takes heart to make a great cookie.", stock: true, supplier_id: 3},
@@ -6,19 +14,7 @@ Product.create!([
   {name: "Oreo Original Chocolate Chip Cookies", price: "4.0", description: "Milk's favorite cookie. Sealed; slit appears when opened.", stock: true, supplier_id: 3},
   {name: "Nabisco Chips Ahoy! Chocolate Chip Cookies", price: "4.0", description: "This is a thing", stock: true, supplier_id: 1}
 ])
-Supplier.create!([
-  {name: "Nabisco", email: "time@nabisco.com", phone: "555-345-6789"},
-  {name: "Pepperidge Farm", email: "george@pepfarms.com", phone: "678-222-5555"},
-  {name: "General Cookies", email: "whatthecookies@gmail.com", phone: "555-123-9876"}
-])
-User.create!([
-  {name: "Chris", email: "Chris@chris.com", password_digest: "$2a$10$na3gxvRJTRQ9wni/jLO4p.hYRQ5/.kXvfk9nYf372xg6VtChvp1nq", admin: false},
-  {name: "Chris", email: "Chris@chris.com", password_digest: "$2a$10$cZt.sJ2KGN1qzFOqV7NEoeR8Kd5vLlNcy9qkDoDzq5YDDII2awpxa", admin: false},
-  {name: "asklfj", email: "alsjf@gmail.com", password_digest: "$2a$10$7xkd62rVPLrNE/LLT4rnnOeuVmQFinrPh318FsItp2K97hwsigZC6", admin: false},
-  {name: "bob", email: "bob@gmail.com", password_digest: "$2a$10$mv69/bQ3958LVUFPbH8/j.Xre5UQQgNe.ThCh99g7y3xUFw2HpNGG", admin: false},
-  {name: "chris", email: "cpbateson@gmail.com", password_digest: "$2a$10$850H2YR3JOLjOJr6SPn26OfRSWQojHdfB5ghKyUmj9i1KxCZAYKdq", admin: true},
-  {name: "steve", email: "steve@gmail.com", password_digest: "$2a$10$xQjqIvVLaXiyRtyYoaONMu6Wzuc125QKTGhgE6wY9dIyaDPKcm9..", admin: false}
-])
+
 
 Image.create!([
   {url: "http://target.scene7.com/is/image/Target/12942943?wid=520&hei=520&fmt=pjpeg", product_id: 2},
