@@ -7,7 +7,7 @@
     <input type="text" name="quantity" value="<!%= item.quantity %>">
   <!% end %> -->
 
-    <h3><li><%= item.product.name %> = <%= number_to_currency(item.product.price) %> x <%= item.quantity %> = <strong><%= number_to_currency(item.product.price * item.quantity) %> </strong>-
+    <h3 style="padding-left: 20px;"><li><%= item.product.name %> = <%= number_to_currency(item.product.price) %> x <%= item.quantity %> = <strong><%= number_to_currency(item.product.price * item.quantity) %> </strong>-
 
 
     <%= link_to  "Remove Item", "/carted_products/#{item.id}", method: :delete, class: "btn btn-danger" %>
@@ -17,7 +17,7 @@
 
   <% end %>
   </ol>
-  <div class="content">
+  <div class="content" style="padding-left: 50px;">
     <%= form_tag "/orders", method: :post do %>
       <%= submit_tag "Buy Now!", class: "btn btn-primary" %>
     <% end %>
